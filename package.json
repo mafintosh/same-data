@@ -1,6 +1,6 @@
 {
   "name": "same-data",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Deep equal with no deps and only for 'data' objects, ie basic objects, arrays, primitives and typed arrays",
   "main": "index.js",
   "scripts": {
