@@ -13,10 +13,7 @@ test('basic', function (t) {
 test('objects', function (t) {
   t.is(sameData({ foo: 1 }, { foo: 1 }), true)
   t.is(sameData({ foo: 1 }, { foo: 1, bar: true }), false)
-  t.is(
-    sameData({ foo: 1, nested: { a: 1 } }, { foo: 1, nested: { a: 1 } }),
-    true
-  )
+  t.is(sameData({ foo: 1, nested: { a: 1 } }, { foo: 1, nested: { a: 1 } }), true)
   t.is(sameData([{ a: 1 }, { b: 1 }], [{ a: 1 }, { b: 1 }]), true)
 })
 
