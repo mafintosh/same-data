@@ -1,22 +1,26 @@
 module.exports = sameData
 
-function type (o) {
+function type(o) {
   const t = typeof o
 
   return t === 'object'
     ? Array.isArray(o)
       ? 'array'
       : isTypedArray(o)
-        ? (typeof o.equals === 'function') ? 'buffer' : 'array'
-        : (o === null ? 'null' : 'object')
+        ? typeof o.equals === 'function'
+          ? 'buffer'
+          : 'array'
+        : o === null
+          ? 'null'
+          : 'object'
     : t
 }
 
-function isTypedArray (a) {
+function isTypedArray(a) {
   return !!a && typeof a.length === 'number' && ArrayBuffer.isView(a.array)
 }
 
-function sameData (a, b) {
+function sameData(a, b) {
   if (a === b) return true
 
   const ta = type(a)
@@ -53,6 +57,6 @@ function sameData (a, b) {
   return true
 }
 
-function cmp (a, b) {
+function cmp(a, b) {
   return a[0] === b[0] ? 0 : a[0] < b[0] ? -1 : 1
 }
