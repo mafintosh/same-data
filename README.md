@@ -10,7 +10,7 @@ Designed to be simple and for data. Does NOT do anything magic for functions, sy
 
 ## Usage
 
-``` js
+```js
 const sameData = require('same-data')
 
 console.log(sameData(1, 1)) // true
